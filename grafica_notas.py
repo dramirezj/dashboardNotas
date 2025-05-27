@@ -8,6 +8,7 @@ fdatos = pd.read_csv("notas_limpias.csv")
 
 #Crear la aplicacion 
 app = dash.Dash(__name__)
+server = app.server
 app.title = "DashBoard Notas Estudiantes"
 
 #crear ventana del dashboard
