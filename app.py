@@ -8,7 +8,7 @@ fdatos = pd.read_csv("notas_limpias.csv")
 
 #Crear la aplicacion 
 app = dash.Dash(__name__)
-server = app.server
+#server = app.server
 app.title = "DashBoard Notas Estudiantes"
 
 #crear ventana del dashboard
@@ -59,14 +59,12 @@ def actualizar(career):
         x="Edad",
         y="Promedio",
         color="Desempeño",
-        title=f"Edad vs Promedio - {career} )"
+        title=f"Edad vs Promedio - {career}"
     )
-    
     promedios = fdatos.groupby("Carrera")["Promedio"].mean().reset_index()
     pie = px.pie(filtro,
                  names = "Desempeño",
                  title = f"Desempeño por Carrera - {career}")
-    
     bar = px.bar(promedios,
                  x = "Carrera",
                  y = "Promedio",
