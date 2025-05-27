@@ -56,6 +56,6 @@ def clasificar(promedio):
 fdatos_nuevo["Desempeño"] = fdatos_nuevo["Promedio"].apply(clasificar)
 
 #descargar archivo
-fdatos_nuevo.to_csv("Notas_limpias.csv",index=False)
+fdatos_nuevo.to_csv("notas_limpias.csv",index=False)
 
 print(fdatos_nuevo.head())
